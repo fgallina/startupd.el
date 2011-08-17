@@ -1,0 +1,54 @@
+This package contains startupd.el
+
+* Info
+
+  + Author: Fabián Ezequiel Gallina
+  + Contact: fabian at anue dot biz
+  + Project homepage: http://github.com/fgallina/startupd.el
+  + My Blog: http://www.from-the-cloud.com
+  + Downloads page: http://github.com/fgallina/startupd.el/downloads
+
+* Introduction
+
+  Modular loading of Emacs configuration.
+
+  Small utility library that loads all Lisp files located in the
+  directory indicated by `startupd-path'. Files are filtered by the
+  `startupd-file-name-regexp' and the loading order is determined by
+  the function defined in `startupd-file-loading-sort-function'. By
+  default the file loading order is done by using `string<' and
+  byte-compiled versions always take precedence.
+
+* Requirements
+
+  This package was tested with GNU/Emacs 23 only, it should work with
+  others versions too but I can't ensure anything. Besides from that
+  nothing else is required.
+
+* Installation/Usage
+
+  Add this to your .emacs:
+
+  #+BEGIN_EXAMPLE
+  (add-to-list 'load-path "/folder/containing/file")
+  (require 'startupd)
+  (startupd-load-files)
+  #+END_EXAMPLE
+
+  The default startupd folder is "~/.emacs.d/startup.d/".
+
+  The default regexp used to indentify startup files matches things
+  like "00functions.el", "50org.el", etc. That means a two digit
+  number followed by a letter, followed by any number of alphanumeric,
+  "-" and "_" and ending in ".el" or ".elc". If a byte-compiled
+  version of a file exists it *always takes precedence*.
+
+* Bug Reports
+
+  If you find a bug please report it sending an email listed in the
+  top of the file or just use the github tracker.
+
+* License
+
+  startupd.el is free software under the GPL v3, see LICENSE file for
+  details.
