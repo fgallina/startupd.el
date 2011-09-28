@@ -49,7 +49,7 @@
 It must end with backslash.")
 
 (defvar startupd-file-name-regexp
-  "\\([0-9][0-9]\\)?[-A-Za-z_+.][-A-Za-z0-9_+.]+\\.elc?"
+  "\\([0-9][0-9]\\)?[-A-Za-z_+.][-A-Za-z0-9_+.]+\\.elc?$"
   "Regexp that files should match to be loaded.")
 
 (defvar startupd-file-loading-sort-function 'string<
