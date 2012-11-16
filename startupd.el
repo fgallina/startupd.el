@@ -77,6 +77,7 @@ and filtered by the `startupd-file-names-regexp'."
            startupd-file-loading-sort-function)))
     files))
 
+;;;###autoload
 (defun startupd-load-files ()
   "Load all startupd elegible files."
   (dolist (file (startupd-list-files))
